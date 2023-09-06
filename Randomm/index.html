@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small Project</title>
+
+<style>
+    body{
+        padding-bottom: 1000px;
+        padding-left: 305px;
+    }
+    .stock{
+        color: green;
+        font-weight: bold;
+    }
+    .cart-button{
+        background-color: rgb(245, 216, 50);
+        border: 0px;
+        border-radius: 15px;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        margin-top: 0px;
+        transition: all 0.15s;
+    }
+    .cart-button:hover{
+        cursor: pointer;
+        background-color: rgb(199, 174, 36);;
+    }
+    .cart-button:active{
+        opacity: 50%;
+    }
+    .free-text{
+        margin-bottom: 0px;
+    }
+    .buy-button, .join-button{
+        background-color: rgb(255, 166, 0);
+        border: 0px;
+        border-radius: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        margin-top: 0px;
+        margin-left: 10px;
+        transition: all 0.15s;
+    }
+    .buy-button:hover, .join-button:hover{
+        cursor: pointer;
+        background-color: rgb(218, 141, 0);
+    }
+    .buy-button:active, .join-button:active, .addfriend-button:active{
+        opacity: 50%;
+        scale: 95%;
+    }
+    .back-text:hover{
+        color: rgb(185, 0, 0);
+        cursor: pointer;
+    }
+    .back-button{
+        background-color: rgb(165, 165, 165);
+        border: 1px;
+        border-style: solid;
+        border-color: rgb(134, 134, 134);
+        padding: 10px;
+        transition: all 0.15s;
+        margin-right: 15px;
+    }
+    .back-button:hover{
+        cursor: pointer;
+        background-color: rgb(143, 142, 142);
+        box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.15);
+    }
+    .back-button:active{
+        opacity: 70%;
+    }
+    .satu{
+        background-color: rgb(223, 223, 223);
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        transition: all 0.15s;
+    }
+    .satu:hover{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .dua{
+        background-color: rgb(223, 223, 223);
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        transition: all 0.15s;
+    }
+    .dua:hover{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .tiga{
+        background-color: rgb(223, 223, 223);
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        transition: all 0.15s;
+    }
+    .tiga:hover{
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .next-button{
+        background-color: rgb(165, 165, 165);
+        border: 1px;
+        border-style: solid;
+        border-color: rgb(134, 134, 134);
+        padding: 10px;
+        transition: all 0.15s;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .next-button:hover{
+        cursor: pointer;
+        background-color: rgb(143, 142, 142);
+        box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.15);
+    }
+    .next-button:active{
+        opacity: 70%;
+    }
+    p5{
+        font-family: Arial, Helvetica, sans-serif;
+        display: block;
+    }
+    .number-text{
+        font-size: 40px;
+    }
+    .usd{
+        font-size: 18px;
+    }
+    .persen-text{
+        font-size: 18px;
+        color: rgb(107, 211, 3);
+        margin-top: 8px;
+    }
+    .after-text{
+        margin-top: 10px;
+        color: rgb(129, 129, 129);
+    }
+    .afterdua{
+        color: rgb(223, 9, 9);
+    }
+    .email-text{
+        margin-top: 40px;
+        font-size: 13px;
+        margin-bottom: 2px;
+    }
+    .email-box, .firstname, .lastname{
+        background-color: rgb(233, 232, 232);
+        border: 0;
+        border-radius: 5px;
+        margin-left: 1px;
+        width: 300px;
+        padding-left: 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    .email-box{
+        display: block;
+    }
+    .firstname{
+        width: 139px;
+        margin-bottom: 5px;
+    }
+    .lastname{
+        width: 139px;
+    }
+    .join-button{
+        display: inline;
+        margin-left: 1px;
+        margin-top: 10px;
+        padding-left: 145px;
+        padding-right: 145px;
+        background-color: rgb(59, 59, 255);
+        color: white;
+        font-size: 11px;
+        border-color: rgb(0, 0, 0, 0);
+        border-width: 3px;
+        border-style: solid;
+        transition: all 0.15s;
+    }
+    .join-button:hover, .tweet-button:hover{
+        background-color:  rgb(43, 43, 255);
+        border-color: rgb(113, 138, 250);
+        border-width: 3px;
+        border-style: solid;
+        box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.2);
+    }
+    .form-container, .left-container{
+        border: 1px solid rgb(199, 199, 199);
+        padding: 15px;
+        transition: all 0.35s;
+        display: inline-block;
+    }
+    .left-container{
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+    .form-container:hover{
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+    .ledac-img{
+        margin-left: 1px;
+        margin-right: 45px;
+        border-radius: 50px;
+        width: 40px;
+        height: auto;
+        display: inline;
+        vertical-align: middle;
+    }
+    .whats-text{
+        display: inline;
+        vertical-align: middle;
+        margin-left: -35px;
+        color: rgb(109, 109, 109);
+    }
+    .tweet-button{
+        display: inline;
+        margin-left: 50px;
+        margin-top: 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        background-color: rgb(38, 133, 243);
+        color: white;
+        font-size: 11px;
+        border-color: rgb(0, 0, 0, 0);
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 15px;
+        
+    }
+    .tweet-button:hover{
+        background-color: rgb(90, 150, 218);
+        cursor: pointer;
+    }
+    .left-side, .middle-side{
+        width: 100%;
+        height: 650px;
+        display: block;        
+    }
+    .left-side{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .middle-side{
+        vertical-align: top;
+        width: 100%;
+        height: 1000px;
+        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .square-image{
+        width: 150px;
+        height: 160px;
+    }
+    .friend-container{
+        border: 2px solid rgb(202, 202, 202);
+        box-shadow: 5px 5px 8px rgb(0, 0, 0, 0.1);
+        margin-right: 15px;
+        margin-bottom: 50px;
+    }
+    .friend-container:hover{
+        cursor: pointer;
+    }
+    .lewdac-image{
+        display: inline-block;
+        width: 180px;
+        height: 190px;
+    }
+    .lewdac-text{
+        margin-top: 5px;
+        font-size: 17px;
+        margin-left: 6px;
+    }
+    .two-text{
+        margin-left: 6px;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    .addfriend-button{
+        margin-top: 5px;
+        margin-left: 6px;
+        margin-bottom: 7px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background-color: rgb(38, 133, 243);
+        color: white;
+        font-size: 11px;
+        border-color: rgb(0, 0, 0, 0);
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 4px;
+        
+    }
+    .addfriend-button:hover{
+        cursor: pointer;
+    }
+    .windah-image{
+        width: 20px;
+        border-radius: 10px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    .google-container{
+        width: 575px;
+        text-align: center;
+        margin-top: 300px;
+    }
+    .google-image{
+        width: 200px;
+        display: inline-block;
+    }
+    .google-image-div{
+        width: 575px;
+        height: 100px;
+    }
+    .google-input{
+        width: 400px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border: 1px solid rgb(216, 216, 216);
+        border-radius: 20px;
+        box-shadow: 0px 1px 5px rgb(0, 0, 0, 0.2);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .friend-image-div-{
+        width: 100%;
+        height: 30px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    .two-text-{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1px;
+        font-size: 12px;
+    }
+    .friend-button-div-{
+        margin-top: -12px;
+    }
+    .friend-grip-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;  
+    }
+    .notification-container{
+        border: 1px solid rgb(200, 200, 200);
+        background-color: rgb(255, 255, 255);
+        width: 400px;
+        height: 115px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .notification-flexbox{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .notification-text{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+    div2{
+        background-color: rgb(49, 109, 245);
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 20px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+    }
+    .gmail-container{
+        border: 1px solid rgb(197, 197, 197);
+        width: 340px;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        display: grid;
+        row-gap: 10px;
+    }
+    .gmail-header-text{
+        height: 30px;
+        color: rgb(141, 141, 141);
+        font-size: 13px;
+    }
+    .gmail-content{
+        height: 20px;
+        color: rgb(141, 141, 141);
+        font-size: 13px;
+    }
+    .gmail-time-text{
+        color: rgb(141, 141, 141);
+        font-size: 13px;
+    }
+    .gmail-title-text{
+        font-weight: bold;
+    }
+    .gmail-info{
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .gmail-image-{
+        width: 40px;
+        border-radius: 20px
+    }
+    .gmail-image{
+        margin-right: 10px;
+    }
+    .gmail-body{
+        display: flex;
+        align-items: center;
+        
+    }
+    .gmail-title-div{
+        display: flex;
+        justify-content: space-between;
+    }
+    .gmail-letter{
+        flex: 1;
+    }
+    .sidebar-profile-container{
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 80px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(44, 44, 44);
+        align-items: center;
+        z-index: 2;
+    }
+    .sidebar-profile{
+        width: 50px;
+        border-radius: 25px;
+        margin-top: 10px;
+    }
+    .sidebar-profile-{
+        width: 50px;
+        border-radius: 25px;
+        margin-top: 15px;
+    }
+    .sidebar-profile:hover, .sidebar-profile-{
+        cursor: pointer;
+    }
+    .sidebar-info-container{
+        background-color: rgb(63, 63, 63);
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 80px;
+        width: 200px;
+        z-index: 2;
+    }
+    .sidebar-info-div{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        margin-left: 20px;
+    }
+    div3{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: b;
+    }
+    .sidebar-info-title{
+        color: rgb(255, 255, 255);
+    }
+    .sidebar-info-plus{
+        color: rgb(119, 119, 119);
+        scale: 200%;
+        margin-right: 30px;
+        margin-bottom: 15px;
+    }
+    .sidebar-info-plus:hover{
+        cursor: pointer;
+    }
+    .sidebar-hastag-div{
+        display: flex;
+        flex-direction: column;
+        margin-left: 20px;
+    }
+    .sidebar-hastag{
+        color: rgb(150, 150, 150);
+        font-size: 16px;
+        margin-bottom: 15px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .sidebar-hastag:hover{
+        cursor: pointer;
+    }
+    .tshirt-container{
+        position: relative;
+    }
+    .tshirt-image{
+        width: 250px;
+        height: 300px;
+        box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+    .tshirt-sale{
+        position: absolute;
+        top: -8px;
+        right: -39px;
+        background-color: rgb(255, 0, 0);
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(255, 255, 255);
+        border-radius: 2px;
+        padding-left: 10px;
+        padding-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-right: 5px solid rgb(255, 115, 0);
+        box-shadow: 0px 0px 15px rgb(255, 0, 0);
+    }
+    .tshirt-bottom-shadow{
+        position: absolute;
+        background-color: rgb(0, 0, 0, 0.5);
+        bottom: 5px;
+        right: 0;
+        left: 0;
+        height: 80px;
+    }
+    .tshirt-bottom-text{
+        position: absolute;
+        bottom: 5px;
+        right: 0;
+        left: 0;
+        height: 80px;
+        color: rgb(255, 255, 255);
+        margin-left: 45px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 14px;
+    }
+    .tshirt-bottom-button{
+        position: absolute;
+        bottom: 20px;
+        right: 70px;
+        left: 70px;
+        height: 30px;
+        background-color: rgb(255, 0, 0);
+        border: 0;
+        border-radius: 40px;
+        color: rgb(255, 255, 255);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    }
+
+</style>
+
+</head>
+<body>
+<div class="left-side">
+    <a href=""><button class="buy-button">Buy now</button></a>
+<br>
+    <div class="notification-container">
+        <div class="notification-flexbox">
+            <div class="notification-text">Home</div>
+            <div2 class="notification-text">24</div2>
+        </div>
+        <div class="notification-flexbox">
+            <div class="notification-text">Notification</div>
+            <div2 class="notification-text">4</div2>
+        </div>
+        <div class="notification-flexbox">
+            <div class="notification-text">Messages</div>
+            <div2 class="notification-text">2</div2>
+        </div>
+    </div>
+    <br><br>
+    <!--Lesson 5-->
+    <p5 class="number-text">1,049.61 <span class="usd">USD</span></p5>
+    <p5 class="persen-text">&plus;18.05 &#40;1.75&#37;&#41; today</p5>
+    <p5 class="after-text">After hours 1,048.00 <span class="afterdua">	&#45;1.61 &#40;0.15&#37;&#41; </span></p5>
+
+    <!-- Lesson 7-8 -->
+    <br><br>
+    <div class="form-container">
+    <input class="firstname" type="textarea" placeholder="First name">
+    <input class="lastname" type="textarea" placeholder="Last name">
+    <input class="email-box" type="email" placeholder="Email">
+    <button class="join-button">Join</button>
+    </div>
+    <br><br><br>
+    <div class="left-container">
+    <img class="ledac-img" src="img/channels4_profile.jpg">
+    <p5 class="whats-text">What's happening?</p5>
+    <button class="tweet-button">Tweet</button>
+    </div>
+
+</div>
+<div class="middle-side">
+    <div class="google-container">
+        <div class="google-image-div">
+    <img class="google-image" src="img/Google-Logo.png">
+        </div>
+    <input class="google-input" type="textarea" placeholder="Search Google or type a URL">
+    </div>
+    <br><br><br>
+    <div class="friend-grip-container">
+        <div class="friend-container">
+        <img class="lewdac-image" src="img/88f94cbf73f831c2f786be99f53d1939.jpg">
+        <p5 class="lewdac-text"><strong>Mwehehe</strong></p5>
+        <div class="friend-image-div-">
+        <img class="windah-image" src="img/channels4_profile (1).jpg">
+        <p5 class="two-text-">2 mutual friends</p5>
+        </div>
+        <div class="friend-button-div-">
+        <button class="addfriend-button">Add Friend</button>
+        </div>
+        </div>
+        <div class="friend-container">
+        <img class="lewdac-image" src="img/58efd2f6e67af2a80877705431b3df9b.jpg">
+        <p5 class="lewdac-text"><strong>Sadie Sink</strong></p5>
+        <div class="friend-image-div-">
+        <img class="windah-image" src="img/channels4_profile (1).jpg">
+        <p5 class="two-text-">3 mutual friends</p5>
+        </div>
+        <div class="friend-button-div-">
+        <button class="addfriend-button">Add Friend</button>
+    </div>
+        </div>
+        <div class="friend-container">
+            <div class="friend-image-div">
+            <img class="lewdac-image" src="img/4d220757db9b330e6b46e7fb599591c1.jpg">
+            </div>
+        <div class="friend-text-div">
+        <p5 class="lewdac-text"><strong>Copycat</strong></p5>
+        </div>
+            <div class="friend-image-div-">
+            <img class="windah-image" src="img/channels4_profile (1).jpg">
+            <p5 class="two-text-">1 mutual friends</p5>
+            </div>
+        <div class="friend-button-div-">
+        <button class="addfriend-button">Add Friend</button>
+        </div>
+        </div>
+
+    
+
+    </div>
+    
+<br><br>
+    <div class="gmail-container">
+            <div class="gmail-header-text">ALL INBOXES</div>
+        <div class="gmail-body">
+            <div class="gmail-image">
+                <img class="gmail-image-" src="img/channels4_profile.jpg">
+            </div>
+            <div class="gmail-letter">
+                <div class="gmail-title-div">
+                    <div class="gmail-title-text">Chewy Promotions</div>
+                    <div class="gmail-time-text">4:58 PM</div>
+                </div>
+                <div class="gmail-info">Biggest sales of the year!</div>
+                <div class="gmail-content">Hey there! We're writing to tell you about our...</div>  
+            </div>           
+        </div>
+    
+    
+        <div class="gmail-body">
+            <div class="gmail-image">
+                <img class="gmail-image-" src="img/58efd2f6e67af2a80877705431b3df9b.jpg">
+            </div>
+            <div class="gmail-letter">
+                <div class="gmail-title-div">
+                    <div class="gmail-title-text">Sadie Sink</div>
+                    <div class="gmail-time-text">9:16 AM</div>
+                </div>
+                <div class="gmail-info">Personal Question</div>
+                <div class="gmail-content">I think i ummm i like you, how inch your d1ck...</div>  
+            </div>           
+        </div>
+    
+        <div class="gmail-body">
+            <div class="gmail-image">
+                <img class="gmail-image-" src="img/88f94cbf73f831c2f786be99f53d1939.jpg">
+            </div>
+            <div class="gmail-letter">
+                <div class="gmail-title-div">
+                    <div class="gmail-title-text">Muhammad Eghar Saputra</div>
+                    <div class="gmail-time-text">12:01 AM</div>
+                </div>
+                <div class="gmail-info">Company Project</div>
+                <div class="gmail-content">Woi bro, gw udah nih bagian footer lu besok...</div>  
+            </div>           
+        </div>
+
+
+</div>
+    <div class="sidebar-profile-container">
+        <img class="sidebar-profile-" onclick="alert('Emang Gitu Kocak')" src="img/channels4_profile (1).jpg">
+        <img class="sidebar-profile" src="img/channels4_profile.jpg">
+        <img class="sidebar-profile" src="img/88f94cbf73f831c2f786be99f53d1939.jpg">
+    </div>
+    <div class="sidebar-info-container">
+        <div class="sidebar-info-div">
+            <div3 class="sidebar-info-title">INFO</div3>
+            <div3 class="sidebar-info-plus">+</div3>
+        </div>
+        <div class="sidebar-hastag-div">
+            <div class="sidebar-hastag"># new-videos</div>
+            <div class="sidebar-hastag"># updates</div>
+            <div class="sidebar-hastag"># faq</div>
+        </div>
+    </div>
+    <br><br>
+    <div class="tshirt-container">
+        <img class="tshirt-image" src="img/88f94cbf73f831c2f786be99f53d1939.jpg">
+        <div class="tshirt-sale">20% OFF</div>
+        <div class="tshirt-bottom-shadow"></div>
+        <div class="tshirt-bottom-text">(DIJUAL TEMEN LAKNAT)</div>
+        <button class="tshirt-bottom-button">BUY NOW</button>
+    </div>
+<br><br><br>
+
+</div>
+</div>
+</body>
+</html>\
